@@ -1,0 +1,54 @@
+<div class="dashboard-container">
+  <!-- Daily Consumption Card -->
+  @if (dailyReadings.length) {
+    <p-card header="Daily Consumption">
+      <div class="card-content">
+        <p-table [value]="dailyReadings" [scrollable]="true" scrollHeight="250px">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Date</th>
+              <th>Consumption</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-reading>
+            <tr>
+              <td>{{ reading.readingDate | date:'shortDate' }}</td>
+              <td>{{ reading.value }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+        <p-chart type="bar" [data]="dailyChartData" [options]="chartOptions"></p-chart>
+      </div>
+    </p-card>
+  }
+
+  <!-- Monthly Consumption Card -->
+  @if (monthlyReadings.length) {
+    <p-card header="Monthly Consumption">
+      <div class="card-content">
+        <p-table [value]="monthlyReadings" [scrollable]="true" scrollHeight="250px">
+          <ng-template pTemplate="header">
+            <tr><th>Date</th><th>Consumption</th></tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-reading>
+            <tr><td>{{ reading.readingDate | date:'yyyy-MM' }}</td><td>{{ reading.value }}</td></tr>
+          </ng-template>
+        </p-table>
+        <p-chart type="bar" [data]="monthlyChartData" [options]="chartOptions"></p-chart>
+      </div>
+    </p-card>
+  }
+
+  <!-- Yearly Consumption Card -->
+  @if (yearlyReadings.length) {
+    <p-card header="Yearly Consumption">
+      <div class="card-content">
+        <p-table [value]="yearlyReadings" [scrollable]="true" scrollHeight="250px">
+          <ng-template pTemplate="header"><tr><th>Year</th><th>Consumption</th></tr></ng-template>
+          <ng-template pTemplate="body" let-reading><tr><td>{{ reading.readingDate | date:'yyyy' }}</td><td>{{ reading.value }}</td></tr></ng-template>
+        </p-table>
+        <p-chart type="bar" [data]="yearlyChartData" [options]="chartOptions"></p-chart>
+      </div>
+    </p-card>
+  }
+</div>

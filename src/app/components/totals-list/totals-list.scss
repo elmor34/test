@@ -1,0 +1,33 @@
+// src/app/components/totals-list/totals-list.scss
+.p-card {
+  text-align: center;
+  border-radius: 8px; // For rounded corners like in the image
+
+  .consumption-label {
+    font-size: medium;
+    color: white;
+    margin: 1.5rem 0 0.5rem 0; // Increased top margin for ~half space positioning
+    padding-top: 1.5rem; // Additional padding to push down from top
+  }
+
+  .metric-container {
+    display: flex;
+    flex-direction: column; // Stack vertically for separation
+    justify-content: center;
+    align-items: center;
+  }
+
+  .metric {
+    margin: 0 0 0.5rem 0; // Space below number for time
+    color: white;
+    display: inline-flex;
+    align-items: baseline;
+
+    font-size: 2.5rem; // Uniform size since no split
+    font-weight: bold;
+  }
+
+  .last-updated {
+    margin-top: 0; // Ensure no extra space
+  }
+}

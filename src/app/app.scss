@@ -1,0 +1,20 @@
+// src/app/app.scss
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+// Optional: Override PrimeNG variables if needed for consistency
+:root {
+  --font-family: 'Roboto', sans-serif;
+}
+
+// Make headings and metrics bolder for a "robust" feel
+h1, h2 {
+  font-weight: 700; // Bold
+}
+
+p {
+  font-weight: 400; // Regular
+}

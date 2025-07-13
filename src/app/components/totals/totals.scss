@@ -1,0 +1,33 @@
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+p-card {
+  flex: 1 1 450px; /* Flex-grow, flex-shrink, flex-basis */
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+
+  /* PrimeNG card body needs help with flexbox sometimes */
+  ::ng-deep .p-card .p-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+  }
+  ::ng-deep .p-card .p-card-content {
+    padding: 0;
+    height: 100%;
+  }
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+}
+
